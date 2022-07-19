@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { Image } from 'react-native-elements'
-import restaurants from '../../data'
+import restaurants from '../../../backend/data'
 
 export default function About(props) {
   const formatCategories = restaurants[0].categories.join(' - ')

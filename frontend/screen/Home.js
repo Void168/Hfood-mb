@@ -4,7 +4,7 @@ import HeaderTabs from '../components/home/HeaderTabs'
 import SearchBar from '../components/home/SearchBar'
 import Categories from '../components/home/Categories'
 import Restaurants from '../components/home/Restaurants'
-import restaurants from '../data'
+import restaurants from '../../backend/data'
 import BottomTabs from '../components/home/BottomTabs'
 import { Divider } from 'react-native-elements'
  

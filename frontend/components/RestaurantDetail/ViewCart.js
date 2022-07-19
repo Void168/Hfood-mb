@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
 import OrderItems from "./OrderItems";
-import firebase from '../../backend/firebase'
+// import firebase from '../../backend/firebase'
 import LottieView from "lottie-react-native";
 
 export default function ViewCart ()
@@ -23,22 +23,22 @@ export default function ViewCart ()
     currency: "USD",
   });
 
-   const addOrderToFireBase = () => {
-    setLoading(true);
-    const db = firebase.firestore();
-    db.collection("orders")
-      .add({
-        items: items,
-        restaurantName: restaurantName,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      })
-      .then(() => {
-        setTimeout(() => {
-          setLoading(false);
-          navigation.navigate("OrderCompleted");
-        }, 2500);
-      });
-  };
+  //  const addOrderToFireBase = () => {
+  //   setLoading(true);
+  //   const db = firebase.firestore();
+  //   db.collection("orders")
+  //     .add({
+  //       items: items,
+  //       restaurantName: restaurantName,
+  //       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+  //     })
+  //     .then(() => {
+  //       setTimeout(() => {
+  //         setLoading(false);
+  //         navigation.navigate("OrderCompleted");
+  //       }, 2500);
+  //     });
+  // };
 
   const styles = StyleSheet.create({
     modalContainer: {
@@ -103,7 +103,7 @@ export default function ViewCart ()
                 onPress={() =>
                 {
                   setModalVisible(false);
-                  addOrderToFireBase();
+                  // addOrderToFireBase();
                 }}
               >
                 <Text style={{ color: "white", fontSize: 20 }}>Thanh toán</Text>
@@ -192,7 +192,7 @@ export default function ViewCart ()
         >
           <LottieView
             style={{ height: 200 }}
-            source={require("../../assets/animations/scanner.json")}
+            source={require("../../../assets/animations/scanner.json")}
             autoPlay
             speed={3}
           />

@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/Ionicons'
-import restaurants from '../../data'
+import restaurants from '../../../backend/data'
 
 export default function Restaurants({ navigation, ...props }) {
   return (
